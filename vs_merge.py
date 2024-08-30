@@ -88,7 +88,7 @@ def extract_and_merge_columns_with_delay(old_file, new_file, old_keys, new_keys,
     return merged_file_path
 
 def main():
-      st.title('Vessel_Schedule_Merge')
+    st.title('Excel Compare & Merge Tool (v4)')
 
     # Upload widgets for the old and new Excel files for column extraction
     old_file_upload = st.file_uploader("Upload Excel A for merging (both files must have the same primary keys)", type=['xlsx'], key='old')
