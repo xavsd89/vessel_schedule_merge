@@ -88,17 +88,17 @@ def extract_and_merge_columns_with_delay(old_file, new_file, old_keys, new_keys,
     return merged_file_path
 
 def main():
-    st.title('Excel Compare & Merge Tool (v4)')
+    st.title('Vessel_Schedule_Merge')
 
     # Upload widgets for the old and new Excel files for column extraction
-    old_file_upload = st.file_uploader("Upload Excel A for merging (both files must have the same primary keys)", type=['xlsx'], key='old')
-    new_file_upload = st.file_uploader("Upload Excel B for merging (both files must have the same primary keys)", type=['xlsx'], key='new')
+    old_file_upload = st.file_uploader("Upload Excel A for merging (both files must have common primary keys)", type=['xlsx'], key='old')
+    new_file_upload = st.file_uploader("Upload Excel B for merging (both files must have common primary keys)", type=['xlsx'], key='new')
 
     # Specify the primary keys and columns to extract
-    old_keys = st.text_input("Unique Key - Enter Primary Key Column names for Excel A (separated by commas & no space)", "PrimaryKeyA1,PrimaryKeyA2")
-    new_keys = st.text_input("Unique Key - Enter Primary Key Column names for Excel B (separated by commas & no space)", "PrimaryKeyB1,PrimaryKeyB2")
-    old_columns = st.text_input("Enter Column names (include primary keys) to extract from Excel A (separated by commas & no space)", "Column1,Column2..etc")
-    new_columns = st.text_input("Enter Column names to extract from Excel B (separated by commas & no space)", "Column1,Column2..etc")
+    old_keys = st.text_input("Enter Primary Keys: 'BKH - Vessel Name,BKH - Voyage Ref' for C-Report, 'Vessel Name' for 1st Merge file", "PrimaryKeyA1,PrimaryKeyA2")
+    new_keys = st.text_input("Enter Primary Keys: 'Vessel Name,Voyage Ref' for Berthing Report; 'Vessel Name' for Terminal Report", "PrimaryKeyB1,PrimaryKeyB2")
+    old_columns = st.text_input("Enter Output Columns: 'BKH - Vessel Name,BKH - Voyage Ref' for C-Report; 'BKH - Vessel Name,BKH - Voyage Ref,ETB / ATB,Proforma Berth' for 1st Merge file", "Column1,Column2..etc")
+    new_columns = st.text_input("Enter Output Columns: 'ETB / ATB,Proforma Berth' for Berthing Report; 'SCN,ETA,ATA,Yard Closing' for Terminal Report ", "Column1,Column2..etc")
 
     st.subheader("1. Basic Merge")
     if st.button("Extract and Merge Columns (Basic)"):
@@ -135,7 +135,7 @@ def main():
         else:
             st.error("Please upload both Excel files.")
 
-    st.subheader("2. Merge with Delay Columns")
+    st.subheader("2. Merge with Delay Formula")
     if st.button("Extract and Merge Columns (With Delay Info)"):
         if old_file_upload and new_file_upload:
             try:
@@ -160,7 +160,7 @@ def main():
 
                 st.write("Merge with delay columns completed successfully.")
                 with open(merged_file_path, "rb") as f:
-                    st.download_button("Download Merged File (With Delay Info)", f, file_name="merged_output_with_delay.xlsx")
+                    st.download_button("Download Merged File (With Delay Info)", f, file_name="Vessel_Notification_Report.xlsx")
 
                 # Clean up temporary file
                 os.remove(merged_file_path)
