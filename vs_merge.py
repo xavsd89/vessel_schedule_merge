@@ -93,19 +93,23 @@ def main():
     # Instructions for users
     st.markdown("""
     ---- Upload Files ----
+    
     **Step 1**: Upload C-Report in the Excel A box  
     **Step 2**: Upload Berthing Report in the Excel B box
     
     ---- Define Primary Keys for Merging ----
+    
     **Step 3**: Enter `BKH - Vessel Name,BKH - Voyage Ref` in the Primary Key A box  
     **Step 4**: Enter `Vessel Name,Voyage Ref` in the Primary Key B box  
     **Step 5**: Enter `BKH - Vessel Name,BKH - Voyage Ref` in the Output Columns A box  
     **Step 6**: Enter `ETB / ATB,Proforma Berth` in the Output Columns B box
     
     ---- Download merged C-Report & Berthing Report ----
+    
     **Step 7**: Click "Basic Merge" and download the file
     
     ---- Upload the files 2nd batch for merging ----
+    
     **Step 8**: Upload the first merged report file in the Excel A box  
     **Step 9**: Upload Terminal Report in the Excel B box  
     **Step 10**: Enter `BKH - Vessel Name` in the Primary Key A box  
