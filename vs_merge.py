@@ -115,7 +115,10 @@ def main():
     **Step 10**: Enter `BKH - Vessel Name` in the Primary Key A box  
     **Step 11**: Enter `Vessel Name` in the Primary Key B box  
     **Step 12**: Enter `BKH - Vessel Name,BKH - Voyage Ref,ETB / ATB,Proforma Berth` in the Output Columns A box  
-    **Step 13**: Enter `SCN,ETA,ATA,Yard Closing` in the Output Columns B box  
+    **Step 13**: Enter `SCN,ETA,ATA,Yard Closing` in the Output Columns B box
+
+    ---- Download Vessel_Notification_Report ----
+    
     **Step 14**: Click "Merge with Delay Formula" and download the final report named `Vessel_Notification_Report.xlsx`
     """)
 
