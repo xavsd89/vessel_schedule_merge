@@ -2,5 +2,3 @@ pandas
 openpyxl
 streamlit
 numpy
-tempfile
-os
