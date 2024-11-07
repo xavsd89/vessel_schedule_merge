@@ -88,7 +88,7 @@ def extract_and_merge_columns_with_delay(old_file, new_file, old_keys, new_keys,
     return merged_file_path
 
 def main():
-    st.title('Vessel Schedule Reports Compile Tool (Can be use for generic compile)')
+    st.title('Vessel Schedule Reports Compile Tool (Can be use for generic use)')
 
     # Instructions for users
     st.markdown("""
